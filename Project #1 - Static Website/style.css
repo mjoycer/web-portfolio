@@ -5,17 +5,28 @@
 }
 
 main {
-  margin: 0 auto;
+  margin: 0 auto 50px auto;
+  padding-bottom: 50px;
 }
+
+
 
 @font-face {
   font-family: 'Chewy';
   src: url(assets/fonts/Chewy.ttf);
 }
 
+.fontFamChewy {
+  font-family: 'Chewy';
+}
+
 @font-face {
   font-family: 'League Spartan';
   src: url(assets/fonts/league-spartan-master/webfonts/leaguespartan-bold.ttf);
+}
+
+.fontFamLeague {
+  font-family: 'League Spartan';
 }
 
 h2{
@@ -34,17 +45,10 @@ span, p {
   font-size: 16px;
 }
 
-.invisible {
-  width: 100%;
-  height: 50px;
-}
-
-
 /* Header styling */
 .navbar {
   background-color: #6b1212;
   max-width: 100%;
-  font-family: 'Chewy';
   padding: 0 5px;
 }
 
@@ -54,7 +58,6 @@ span, p {
 }
 
 .navbar-brand p {
-  font-family:'League Spartan' ;
   margin: 0;
   font-size: 0.5em;
 }
@@ -75,7 +78,6 @@ span, p {
 }
 
 .navbar-brand {
-  font-family: Chewy;
   max-width: 50%;
   display: flex;
   align-items: center;
@@ -205,7 +207,6 @@ h2 {
 /* Order Page Styling */
 
 .welcome {
-  font-family: 'League Spartan';
   text-align: center;
   color: #3f3e47;
 }
@@ -328,14 +329,11 @@ footer a:hover {
     font-size: 1em;
   }
 
+  main, 
   .full_menu img {
     max-width: 100%;
   }
 
-  main {
-    max-width: 100%;
-  }
-  
   
 }
 
