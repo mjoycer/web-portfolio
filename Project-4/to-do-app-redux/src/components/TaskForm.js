@@ -5,6 +5,7 @@ const TaskForm = () => {
     const tasks = useSelector(state => state.tasks);
     const dispatch = useDispatch();
     const [newTask, setNewTask] = useState([]);
+    const [errorMessaqge, setErrorMessage] = useState();
 
     const onAddTask = () => {
         let included = false;
@@ -24,9 +25,9 @@ const TaskForm = () => {
             dispatch({ type: 'ADD_TASK', payload: newTask });
             setNewTask('');
         } else if (isEmpty) {
-            alert('This field is required.')
+            setErrorMessage('This field is required.')
         } else {
-            alert('Duplicate Item');
+            setErrorMessage('Duplicate Item');
         }
     }
 
@@ -37,6 +38,7 @@ const TaskForm = () => {
 
     const onChangeHandle = (e) => {
         setNewTask(e.target.value);
+        setErrorMessage();
     }
 
     console.log(newTask);
@@ -44,6 +46,7 @@ const TaskForm = () => {
         <div className="newTaskContainer">
             <form onSubmit={onSubmitHandle}>
                 <input type="text" value={newTask} onChange={(e) => onChangeHandle(e)} />
+                <span>{errorMessaqge}</span>
                 <button onClick={onAddTask}>Add Task</button>
             </form>
 
