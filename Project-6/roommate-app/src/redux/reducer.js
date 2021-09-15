@@ -1,19 +1,28 @@
+import jwtDecode from "jwt-decode";
+// import { decode } from "../../../roommate-express-app/auth";
 const initialState = {
     users: [],
     notes: [],
     chores: [],
     bills: [],
-    currentUser: [],
-    loggedInUser: localStorage.getItem('token') ? { token: localStorage.getItem('token') } : {}
+    loggedInUser: localStorage.getItem('token') ? { token: localStorage.getItem('token') , id: localStorage.getItem('user_id')} : {}
 };
+
 
 const reducer = (state = initialState, action) => {
     switch(action.type) {
-        case 'SET_CURRENT_USER':
-            return{...state, currentUser: action.payload}
+        case 'SET_BG_COLOR':
+            return{...state, bgColor: action.payload}
         case 'LOGIN':
+            let decoded = jwtDecode(action.payload);
             localStorage.setItem('token', action.payload);
-            return{...state, loggedInUser: {token: action.payload} }
+            localStorage.setItem('user_id', decoded.id);
+            return{...state, loggedInUser: {token: action.payload, id: decoded.id} }
+        case 'LOGOUT': {
+            localStorage.removeItem('token');
+            localStorage.removeItem('user_id');
+            return{...state, loggedInUser: {}};
+        }
         case 'SET_USERS':
             return{...state, users: action.payload};
         case 'SET_NOTES':

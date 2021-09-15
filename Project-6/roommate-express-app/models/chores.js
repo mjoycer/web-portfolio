@@ -4,7 +4,7 @@ const users = require('./users');
 const Schema = mongoose.Schema;
 const ChoresSchema = new Schema({
     name:  String,
-    status: String,
+    status: {type: String, default: "Pending"},
     deadline: Date,
     users: [{type: Schema.Types.ObjectId, ref: users}]
 });

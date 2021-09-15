@@ -6,7 +6,7 @@ const BillsSchema = new Schema({
     name: String,
     amount: Number,
     dueDate: Date,
-    status: String,
+    status: {type: String, default: 'Unpaid'},
     isNecessity: Boolean,
     users: [{type: Schema.Types.ObjectId, ref: users}]
 });

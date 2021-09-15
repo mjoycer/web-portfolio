@@ -1,20 +1,26 @@
+const auth = require('../auth');
 const router = require('express').Router();
 const Chores = require('../models/chores');
 
-router.get('/', (req, res) => {
+router.get('/', auth.verify, (req, res) => {
     Chores.find().then(data => {
-        // console.log(data)
-        res.send(data);
+        res.send(data.filter(chore => chore.users.includes(req.body.id)));
     });
 });
 
-router.post('/', (req, res) => {
+router.post('/', auth.verify, (req, res) => {
     let newChore = new Chores(req.body);
 
     newChore.save().then(data => {
-        // console.log(data);
         res.send(data);
     });
 });
+
+router.put('/:id', auth.verify, (req, res) => {
+    Chores.findByIdAndUpdate(req. params.id, req.body).then(data =>{
+        res.send('Record updated');
+    });
+});
+
 
 module.exports = router;

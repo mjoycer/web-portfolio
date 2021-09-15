@@ -27,8 +27,8 @@ const verify = (req, res, next) => {
         let token = req.headers.authorization.split(" ")[1];
         if( typeof(token) !== 'undefined' ){
             jwt.verify( token, secret, (err, decoded) => {
-                console.log(decoded);
-                return err ? res.send("Invalid token") : next();
+                req.body.id = decoded.id;
+                return err ? res.send("Invalid token") :  next();
             });
         }else{
             return res.send('Token undefined');

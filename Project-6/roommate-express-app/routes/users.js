@@ -1,12 +1,42 @@
 const router = require('express').Router();
 const Users = require('../models/users');
+const UserBills = require('../models/userBills');
 
 const bcrypt = require('bcrypt');
 const auth = require('../auth');
 
-router.get('/', (req, res) => {
+// router.get('/', auth.verify, (req, res) => {
+//     Users.aggregate([{
+//         $lookup: {
+//             from: "bills",
+//             localField: "_id",
+//             foreignField: "users",
+//             as: "bills"
+//         }
+//     }]).then(data => { res.send(data) });
+// });
+
+// router.get('/bills', auth.verify, (req, res) => {
+//     Users.aggregate([
+//         {
+//             $lookup: {
+//                 from: "bills",
+//                 localField: "_id",
+//                 foreignField: "users",
+//                 as: "bills"
+//             }
+//         }, 
+//         {
+//             $merge: { into: "user-bills" }
+//         }]).then(data => {
+//             UserBills.find().then(data =>
+//                 res.send(data)
+//             );
+//         });
+// });
+
+router.get('/', auth.verify, (req, res) => {
     Users.find().then(data => {
-        // console.log(data);
         res.send(data);
     });
 });
@@ -32,7 +62,6 @@ router.post('/register', async (req, res) => {
 
     let newUser = new Users(user);
     newUser.save().then(data => {
-        // console.log(data);
         res.send('User has been created.');
     });
 });
@@ -42,9 +71,8 @@ router.post('/login', async (req, res) => {
 
     if (user) {
         let match = await bcrypt.compare(req.body.password, user.password);
-
         if (match) {
-            res.send({auth: auth.createAccessToken(user), data: user} );
+            res.send({ auth: auth.createAccessToken(user) });
             console.log('Login succesful');
         } else {
             res.send({ error: 'Invalid Login' });
