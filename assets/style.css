@@ -1,0 +1,83 @@
+body {
+    background-image: linear-gradient(pink, rgb(197, 197, 255), pink);
+}
+
+main {
+    height: 80vh;
+}
+
+footer {
+    background-color:rgba(255, 255, 255, 0.5);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    cursor: pointer;
+}
+
+.container {
+    display: grid;
+}
+
+.imgContainer, .badgeContainer {
+    grid-area: 1/1;
+}
+
+.imgContainer:hover + .badgeContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.badgeContainer {
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.projectContainer {
+    margin: 50px 0;
+}
+
+.infoContainer {
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: 5px 13px;
+    border-radius: 5px;
+}
+
+#contactDetails {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 5px;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 15px;
+}
+
+h2 {
+    color: rgba(0, 0, 0, 0.4);
+}
+
+#programmerIcon {
+    transform: scaleX(-1);
+}
+
+@media only screen and (max-width: 767px) {
+    .iconContainer {
+        order: -1;
+        margin-top: 1.5rem;
+    }
+
+    #homeInfo {
+        margin: 1.5rem !important;
+    }
+
+    #programmerIcon {
+        width: 65%;
+        margin: 0 auto;
+    }
+}
