@@ -1,5 +1,11 @@
+html {
+    height: 100%;
+}
 body {
-    background-image: linear-gradient(pink, rgb(197, 197, 255), pink);
+    background-image: linear-gradient(to bottom, #FAE8E0, #D8A7B1, #B6E2D3, #FAE8E0) ;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    color:rgba(0, 0, 0, 0.7);
+    font-weight:500;
 }
 
 main {
@@ -13,10 +19,50 @@ footer {
     width: 100%;
 }
 
-a {
+h4, h3, h2 {
+    font-family: 'Bebas Neue';
+    letter-spacing: 0.05rem;
+    font-size: 1.75rem;
+}
+
+
+#homeInfo h1 {
+
+    font-family: 'Bebas Neue';
+    letter-spacing: 0.3rem !important;
+    font-size: 3rem;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation: 
+      typing 3.5s steps(20, end),
+      blink-caret .75s step-end infinite;
+}
+  
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+  
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #B6E2D3; }
+  }
+
+h3 {
+    margin-left: 15px !important;
+    margin-top: 15px !important;
+    margin-bottom: 0 !important;
+}
+
+/* a {
     text-decoration: none;
     color: black;
-}
+} */
 
 a:hover {
     cursor: pointer;
@@ -58,13 +104,54 @@ a:hover {
     padding: 15px;
 }
 
-h2 {
-    color: rgba(0, 0, 0, 0.4);
-}
-
 #programmerIcon {
     transform: scaleX(-1);
+    max-width: 80%;
 }
+
+#wavingProgrammerIcon {
+    max-width: 60%;
+}
+
+.navbar {
+    background-color: white;
+    font-family: 'Bebas Neue';
+    font-size: 1.5rem;
+}
+
+.navbar a {
+    color: #EF7C8E !important;
+    margin: 0 15px !important;
+}
+
+.navbar a:after {    
+    background: none repeat scroll 0 0 transparent;
+    bottom: 0;
+    content: "";
+    display: block;
+    height: 2px;
+    left: 50%;
+    position: absolute;
+    background: #EF7C8E;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    width: 0;
+}
+
+.navbar a:hover:after { 
+    width: 100%; 
+    left: 0; 
+  }
+
+  .navbar li {
+        display: table-cell; 
+        position: relative; 
+  }
+
+  .button {
+      background-color: rgba(255, 255, 255, 0.9) !important;
+      color: #EF7C8E;
+      border: 1px solid #EF7C8E;
+  }
 
 @media only screen and (max-width: 767px) {
     .iconContainer {
@@ -76,8 +163,12 @@ h2 {
         margin: 1.5rem !important;
     }
 
-    #programmerIcon {
+    #wavingProgrammerIcon, #programmerIcon {
         width: 65%;
         margin: 0 auto;
+    }
+
+    .navbar a {
+        margin: 0 !important;
     }
 }

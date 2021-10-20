@@ -9,12 +9,18 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <ul class="nav justify-content-center">
+    <ul class="nav justify-content-center navbar">
         <li class="nav-item">
             <a class="nav-link" href="index.html">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="portfolio.html">Portfolio</a>
@@ -24,7 +30,7 @@
         </li>
     </ul>
     <main>
-        <h2 class="p-2">Here are some of the projects I've worked on...</h2>
+        <h3 class="p-2">Here are some of the projects I've worked on...</h3>
         <div class="projectContainer d-flex justify-content-around flex-wrap align-items-start">
             <div class="container col-sm-12 col-md-6 col-lg-5">
                 <div class="imgContainer">
@@ -43,14 +49,17 @@
                 </div>
             </div>
             <div class="infoContainer col-sm-12 col-md-5 col-lg-6 p-2">
-                <h3>Dormie</h3>
+                <h4>Dormie</h4>
                 <span><em>a roommate app</em></span>
                 <p>Implemented full-stack CRUD functionality using React and Redux on the Front-End, and NodeJS,
                     Express, and MongoDB on the back-end by developing a notes app with chores and bill tracker for
                     roommates.
                     Administered the use of Bootstrap Framework for styling and layout.</p>
-                <a href="https://mjoycer-resto-app.herokuapp.com/" target="_blank"
-                    class="btn btn-outline-primary disabled">Visit Website</a>
+
+                <span><em>Check it on Github: <a href="https://github.com/mjoycer/dormie-app"
+                            target="_blank">https://github.com/mjoycer/dormie-app</a></em></span><br>
+                <a href="https://mjoycer-dormie-app.herokuapp.com/" target="_blank" class="btn button">Visit Website</a>
+
             </div>
         </div>
 
@@ -69,11 +78,13 @@
                 </div>
             </div>
             <div class="infoContainer col-sm-12 col-md-5 col-lg-6 p-2">
-                <h3>Restaurant App</h3>
+                <h4>Restaurant App</h4>
                 <p>Demonstrated CRUD functionalities using React and Redux by implementing an online ordering system of
                     a restaurant.
                     Utilized the Bootstrap Framework for styling and layout.</p>
-                <a href="https://mjoycer-resto-app.herokuapp.com/" target="_blank" class="btn btn-outline-primary">Visit
+                <span><em>Check it on Github: <a href="https://github.com/mjoycer/resto-app"
+                            target="_blank">https://github.com/mjoycer/resto-app</a></em></span><br>
+                <a href="https://mjoycer-resto-app.herokuapp.com/" target="_blank" class="btn button">Visit
                     Website</a>
             </div>
         </div>
@@ -93,9 +104,11 @@
                 </div>
             </div>
             <div class="infoContainer col-sm-12 col-md-5 col-lg-6 p-2">
-                <h3>To-do App</h3>
+                <h4>To-do App</h4>
                 <p>Built a functional to-do web application with CRUD functionalities using React and Redux.</p>
-                <a href="https://mjoycer-to-do-app.herokuapp.com/" target="_blank" class="btn btn-outline-primary">Visit
+                <span><em>Check it on Github: <a href="https://github.com/mjoycer/to-do-app"
+                            target="_blank">https://github.com/mjoycer/to-do-app</a></em></span><br>
+                <a href="https://mjoycer-to-do-app.herokuapp.com/" target="_blank" class="btn button">Visit
                     Website</a>
             </div>
         </div>
@@ -115,10 +128,12 @@
                 </div>
             </div>
             <div class="infoContainer col-sm-12 col-md-5 col-lg-6 p-2">
-                <h3>Pokedex</h3>
+                <h4>Pokedex</h4>
                 <p>Developed a Pokedex-inspired web application using React and Redux.</p>
-                <a href="https://mjoycer-pokedex-project.herokuapp.com/" target="_blank"
-                    class="btn btn-outline-primary">Visit Website</a>
+                <span><em>Check it on Github: <a href="https://github.com/mjoycer/pokedex"
+                            target="_blank">https://github.com/mjoycer/pokedex</a></em></span><br>
+                <a href="https://mjoycer-pokedex-project.herokuapp.com/" target="_blank" class="btn button">Visit
+                    Website</a>
             </div>
         </div>
 
@@ -136,10 +151,12 @@
                 </div>
             </div>
             <div class="infoContainer col-sm-12 col-md-5 col-lg-6 p-2">
-                <h3>In-Between</h3>
+                <h4>In-Between</h4>
                 <p>Created a fully functional game inspired by the Filipino card game "In-Between" using JavaScript.</p>
-                <a href="https://mjoycer-in-between-js-game.herokuapp.com/" target="_blank"
-                    class="btn btn-outline-primary">Visit Website</a>
+                <span><em>Check it on Github: <a href="https://github.com/mjoycer/in-between-js-game"
+                            target="_blank">https://github.com/mjoycer/in-between-js-game</a></em></span><br>
+                <a href="https://mjoycer-in-between-js-game.herokuapp.com/" target="_blank" class="btn button">Visit
+                    Website</a>
             </div>
         </div>
 
@@ -156,10 +173,12 @@
                 </div>
             </div>
             <div class="infoContainer col-sm-12 col-md-5 col-lg-6 p-2">
-                <h3>BBSaRu Static Website</h3>
+                <h4>BBSaRu Static Website</h4>
                 <p>Utilized HTML and CSS in creating a static website for an online food stall.</p>
-                <a href="https://mjoycer-bbsaru-static-website.herokuapp.com/" target="_blank"
-                    class="btn btn-outline-primary">Visit Website</a>
+                <span><em>Check it on Github: <a href="https://github.com/mjoycer/bbsaru-static-website"
+                            target="_blank">https://github.com/mjoycer/bbsaru-static-website</a></em></span><br>
+                <a href="https://mjoycer-bbsaru-static-website.herokuapp.com/" target="_blank" class="btn button">Visit
+                    Website</a>
             </div>
         </div>
     </main>
